@@ -14,7 +14,7 @@ RUN make
 FROM alpine
 
 RUN apk --update add ca-certificates
-COPY --from=builder /go/src/github.com/jessepeterson/mysqlscepserver/build/linux/mysqlscepserver-linux-amd64 /usr/local/mysqlscepserver
+COPY --from=builder /go/src/github.com/jessepeterson/mysqlscepserver/mysqlscepserver-linux-amd64 /usr/local/mysqlscepserver
 RUN chmod a+x /usr/local/mysqlscepserver
 
 EXPOSE 8080
