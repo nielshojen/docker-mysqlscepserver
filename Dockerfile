@@ -11,8 +11,9 @@ RUN mv /mysqlscepserver-linux-amd64 /usr/local/bin/mysqlscepserver
 RUN chmod a+x /usr/local/bin/mysqlscepserver
 RUN apk del curl
 
-VOLUME "/db"
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
 
-EXPOSE 9000
+EXPOSE 8080
 
-ENTRYPOINT ["/usr/local/bin/nanomdm"]
+CMD ["/run.sh"]
