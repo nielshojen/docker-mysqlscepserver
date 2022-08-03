@@ -17,6 +17,9 @@ RUN apk --update add ca-certificates
 COPY --from=builder /go/src/github.com/jessepeterson/mysqlscepserver/mysqlscepserver-linux-amd64 /usr/local/mysqlscepserver
 RUN chmod a+x /usr/local/mysqlscepserver
 
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
+
 EXPOSE 8080
 
-ENTRYPOINT ["/usr/local/mysqlscepserver"]
+CMD ["/run.sh"]
