@@ -4,8 +4,6 @@
 
 execServe="/usr/local/mysqlscepserver"
 
-
-
 # API Key - Required
 if [[ ! ${API_KEY} ]]; then
   /bin/echo "No API Key Set - Exiting"
@@ -24,17 +22,17 @@ if [[ ${CHALLENGE} ]]; then
   execServe="${execServe} -challenge ${CHALLENGE}"
 fi
 
-# Static challenge password (disables dynamic challenges)
+# Set debug
 if [[ ${DEBUG} ]]; then
   execServe="${execServe} -debug ${DEBUG}"
 fi
 
-# API Key - Required
-if [[ ! ${DSN} ]]; then
-  /bin/echo "No DSN Set - Exiting"
+# DSN - Required
+if [[ ! ${DBUSER} ]] && [[ ! ${DBPASS} ]] && [[ ! ${DBNAME} ]]; then
+  /bin/echo "Cannot set DSN - Exiting"
   exit 1
 else
-  execServe="${execServe} -dsn ${DSN}"
+  execServe="${execServe} -dsn '${DBUSER}:${DBPASS}@tcp(${DBHOST:=127.0.0.1}:${DBPORT:=3306})/${DBNAME}'"
 fi
 
 # Port to listen on (default ":8080")
