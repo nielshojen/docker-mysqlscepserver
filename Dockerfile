@@ -2,7 +2,7 @@ FROM alpine
 
 ENV MYSQLSCEPSERVER_VERSION="0.1.1"
 
-RUN apk --no-cache add curl eval
+RUN apk --no-cache add curl
 RUN apk --update add ca-certificates
 RUN curl -L https://github.com/jessepeterson/mysqlscepserver/releases/download/v${MYSQLSCEPSERVER_VERSION}/mysqlscepserver-linux-amd64-v${MYSQLSCEPSERVER_VERSION}.zip -o /mysqlscepserver.zip
 RUN unzip /mysqlscepserver.zip
