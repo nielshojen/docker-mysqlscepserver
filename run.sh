@@ -23,8 +23,8 @@ if [[ ${CHALLENGE} ]]; then
 fi
 
 # Set debug
-if [[ ${DEBUG} ]]; then
-  execServe="${execServe} -debug ${DEBUG}"
+if [[ "${DEBUG}" = "true" ]]; then
+  execServe="${execServe} -debug"
 fi
 
 # DSN - Required
