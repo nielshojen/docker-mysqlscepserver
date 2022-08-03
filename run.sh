@@ -2,7 +2,7 @@
 
 /bin/echo "Starting mysqlscepserver ..."
 
-execServe="/usr/local/mysqlscepserver"
+execServe="/usr/local/bin/mysqlscepserver"
 
 # API Key - Required
 if [[ ! ${API_KEY} ]]; then
