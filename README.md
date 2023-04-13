@@ -1,4 +1,6 @@
-# docker-mysqlscepserver
+[![Publish 🐳 Docker image](https://github.com/nielshojen/docker-mysqlscepserver/actions/workflows/docker.yaml/badge.svg?branch=0.2.0)](https://github.com/nielshojen/docker-mysqlscepserver/actions/workflows/docker.yaml)
+
+# mysqlscepserver
 
 Environment variables to configure the server
 
