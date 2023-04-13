@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: mysqlscepserver
+  IMAGE_NAME: nielshojen/mysqlscepserver
 
 jobs:
   build-and-push-image:
