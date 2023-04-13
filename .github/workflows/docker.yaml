@@ -7,9 +7,10 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: nielshojen/mysqlscepserver
+  IMAGE_NAME: nielshojen/mysqlscepserver:latest
 
 jobs:
+
   build-and-push-image:
     runs-on: ubuntu-latest
     permissions:
