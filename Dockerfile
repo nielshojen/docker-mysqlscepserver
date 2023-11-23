@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV MYSQLSCEPSERVER_VERSION="0.2.0"
+ENV MYSQLSCEPSERVER_VERSION="0.2.1"
 
 RUN apk --no-cache add curl
 RUN apk --update add ca-certificates
